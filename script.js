@@ -6,6 +6,12 @@ $(document).ready(function(){
 
 	// Week Start & End
 	var firstDay = moment().startOf('week');
+
+	var date = firstDay.format('DD'); // 01, 02, 03 ...
+	var day = firstDay.format('ddd') // Sun, Mon
+	var month = firstDay.format('MMMM'); // September
+	var year = firstDay.format('YYYY'); // 2015
+
 	var nextDay = moment(firstDay).add(1, 'days');
 
 	///////////*  MONTH  *///////////
@@ -13,16 +19,49 @@ $(document).ready(function(){
 	eDisplayMonth.innerHTML = today.format('MMMM YYYY');
 
 	$('#next-item').on('click', function (i, val){
-		var nextMonth = eMoment.add(1, 'months').format('MMMM YYYY');
+		var nextMonth = firstDay.format('MMMM YYYY'); // this works!!!
 		$('#displayMonth').replaceWith('<p id="displayMonth" class="month">' + nextMonth + '</p>');
+
+		var nextSun = firstDay.add(1, 'days').format('DD');
+		var nextMon = firstDay.add(1, 'days').format('DD');
+		var nextTue = firstDay.add(1, 'days').format('DD');
+		var nextWed = firstDay.add(1, 'days').format('DD');
+		var nextThu = firstDay.add(1, 'days').format('DD');
+		var nextFri = firstDay.add(1, 'days').format('DD');
+		var nextSat = firstDay.add(1, 'days').format('DD');
+		
+		$('#dateOne').text(nextSun);
+		$('#dateTwo').text(nextMon);
+		$('#dateThree').text(nextTue);
+		$('#dateFour').text(nextWed);
+		$('#dateFive').text(nextThu);
+		$('#dateSix').text(nextFri);
+		$('#dateSeven').text(nextSat);
 	});
 
 	$('#prev-item').on('click', function (i, val){
-		var prevMonth = eMoment.subtract(1, 'months').format('MMMM');
+		var prevMonth = firstDay.format('MMMM YYYY');
 		$('#displayMonth').replaceWith('<p id="displayMonth" class="month">' + prevMonth + '</p>');
+
+		var prevSun = firstDay.subtract(1, 'days').format('DD');
+		var prevMon = firstDay.subtract(1, 'days').format('DD');
+		var prevTue = firstDay.subtract(1, 'days').format('DD');
+		var prevWed = firstDay.subtract(1, 'days').format('DD');
+		var prevThu = firstDay.subtract(1, 'days').format('DD');
+		var prevFri = firstDay.subtract(1, 'days').format('DD');
+		var prevSat = firstDay.subtract(1, 'days').format('DD');
+		
+		$('#dateOne').text(prevSun);
+		$('#dateTwo').text(prevMon);
+		$('#dateThree').text(prevTue);
+		$('#dateFour').text(prevWed);
+		$('#dateFive').text(prevThu);
+		$('#dateSix').text(prevFri);
+		$('#dateSeven').text(prevSat);
 	});
 
 	///////////*  DAYS OF WEEK  *///////////
+
 	// Sunday
 	var day1 = document.getElementById('Sunday');
 	day1.innerHTML = firstDay.format('ddd');
@@ -52,6 +91,7 @@ $(document).ready(function(){
 	day7.innerHTML = nextDay.add(1, 'days').format('ddd');
 
 	///////////*  DATES OF WEEK  *///////////
+	
 	// Sunday
 	var date1 = document.getElementById('dateOne');
 	date1.innerHTML = firstDay.format('DD');
@@ -79,43 +119,5 @@ $(document).ready(function(){
 	// Saturday
 	var date7 = document.getElementById('dateSeven');
 	date7.innerHTML = firstDay.add(1, 'day').format('DD');
-
-	///////////*  DAYS IN MONTH  *///////////
-
-	// var daysOfWeek = [];
-	// 	for(var i = firstDay; i.isBefore(lastDay); i.add(1, 'days')){
-	// 		daysOfWeek.push(i.format('dddd'));
-	// 	};
-	// 	var result = daysOfWeek.toString().split(",").valueOf();
-		// console.log(result);
-
-		// $('.date').append(result);
-
-	// for (var d = new Date(firstDay); d <= lastDay; d.setDate(d.getDate() + 1)) {
-	//     daysOfWeek.push(new Date(d) );
- //  	}
-  	// debugger;
-
-  	// 	var eachDay = document.getElementById("date").innerHTML = daysOfWeek.toString().split(",").valueOf();
-			// console.log(eachDay);
-	// debugger;
-
-
-
-	// $('#next-item').on('click', function(){
-
-	// 	$.each(months, function (index, value){
-	// 		$('p#displayMonth').text(months[(index++) % months.length]);
-	// 	});
-	// });
-
-	/*  DAYS OF THE WEEK  */
-	// var eDisplayWeekday = document.getElementById('displayWeekday');
-	// eDisplayWeekday.innerHTML = today.format('ddd');
-
-
-
-	// Create calendar template -- calendarTemplate is a function and _.template is a method
-	 	var calendarTemplate = _.template($('#calendar-template').html());
 
 });
