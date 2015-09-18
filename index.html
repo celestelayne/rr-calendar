@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+	  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="UTF-8">
+
+		<title>Calendar</title>
+
+		<!-- VENDOR SCRIPTS -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
+		
+		<!-- BOOTSTRAP -->	
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+		<!-- STYLESHEETS -->
+		<link rel="stylesheet" href="stylesheet.css">
+		
+		<!-- APPLICATION SCRIPTS -->
+		<script type="text/javascript" src="script.js"></script>
+	</head>
+
+	<body>
+
+		<div class="container-fluid">
+		  <div class="row">
+		  	<div class="col-md-8 col-md-offset-2 wrapper" id="calendar-template">
+			  	<div class="header">
+						<span id="prev-item" class="glyphicon glyphicon glyphicon-chevron-left pull-left" aria-hidden="true"></span>
+						<span id="next-item" class="glyphicon glyphicon glyphicon-chevron-right pull-right" aria-hidden="true"></span>
+						<p id="displayMonth" class="month"></p>
+					</div> <!-- end header -->
+
+					<div class="calendar-body">
+						<!-- days of the week -->
+						<ul id="displayWeekday" class="row weekdays">
+							<li id="Sunday" class="day"></li>
+							<li id="Monday" class="day"></li>
+							<li id="Tuesday" class="day"></li>
+							<li id="Wednesday" class="day"></li>
+							<li id="Thursday" class="day"></li>
+							<li id="Friday" class="day"></li>
+							<li id="Saturday" class="day"></li>
+						</ul>
+						<!-- dates -->
+						<ul class="row dates">
+							<li id="dateOne" class="date"></li>
+							<li id="dateTwo" class="date"></li>
+							<li id="dateThree" class="date"></li>
+							<li id="dateFour" class="date"></li>
+							<li id="dateFive" class="date"></li>
+							<li id="dateSix" class="date"></li>
+							<li id="dateSeven" class="date"></li>
+						</ul>
+
+					</div> <!-- end calendar-body -->
+
+				</div>
+		  </div>
+		</div>
+
+	</body>
+
+	<script type="text/javascript" id="calendar-template">
+
+	</script>
+
+</html>

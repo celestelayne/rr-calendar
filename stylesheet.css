@@ -1,0 +1,55 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700,300);
+	
+	body {
+		font-family: 'Roboto', sans-serif;
+		font-weight: 500;
+		color: #F2F2F2;
+		text-align: center;
+	}
+
+	.wrapper {
+		background-color: #86C9CB;
+	}
+
+	.header {
+		background-color: green;
+		height: 40px;
+	}
+
+	#prev-item {
+		cursor: pointer;
+	}
+
+	#next-item {
+		cursor: pointer;
+	}
+
+	.calendar-body {
+		background-color: red;
+	}
+
+	.month {
+		text-transform: uppercase;
+	}
+
+	.weekdays {
+		text-transform: uppercase;
+
+	}
+
+	.day {
+		width: 13.75%;
+		list-style: none;
+		position: relative;
+    display: inline-block;
+    float:left;
+	}
+
+	.date {
+		width: 13.75%;
+		list-style: none;
+		position: relative;
+    display: inline-block;
+    float:left;
+    background-color: pink;
+	}
