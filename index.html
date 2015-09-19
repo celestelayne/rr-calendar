@@ -23,7 +23,7 @@
 		<link rel="stylesheet" href="stylesheet.css">
 		
 		<!-- APPLICATION SCRIPTS -->
-		<script type="text/javascript" src="script.js"></script>
+		<script type="text/javascript" src="test.js"></script>
 	</head>
 
 	<body>
@@ -39,25 +39,10 @@
 
 					<div class="calendar-body">
 						<!-- days of the week -->
-						<ul id="displayWeekday" class="row weekdays">
-							<li id="Sunday" class="day"></li>
-							<li id="Monday" class="day"></li>
-							<li id="Tuesday" class="day"></li>
-							<li id="Wednesday" class="day"></li>
-							<li id="Thursday" class="day"></li>
-							<li id="Friday" class="day"></li>
-							<li id="Saturday" class="day"></li>
-						</ul>
+						<ul id="displayWeekday" class="row weekdays"></ul>
+
 						<!-- dates -->
-						<ul id="displayDate" class="row dates">
-							<li id="dateOne" class="date"></li>
-							<li id="dateTwo" class="date"></li>
-							<li id="dateThree" class="date"></li>
-							<li id="dateFour" class="date"></li>
-							<li id="dateFive" class="date"></li>
-							<li id="dateSix" class="date"></li>
-							<li id="dateSeven" class="date"></li>
-						</ul>
+						<ul id="displayDate" class="row dates"></ul>
 
 					</div> <!-- end calendar-body -->
 
@@ -66,5 +51,15 @@
 		</div>
 
 	</body>
+	<script type="text/template" id="music-template" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js">
+
+		<% _.each(dates, function(date){ %>
+			<li class="dates"><%= date %></li>		
+		<% }); %>
+
+		<% _.each(weekdays, function(weekday){ %>
+			<li class="day"><%= weekday %></li>		
+		<% }); %>
+	</script>
 
 </html>
